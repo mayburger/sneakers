@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mayburger.sneakers.ui.sneaker.bag.SneakerBagViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.sneaker.SneakerActivity">
+
+        <RelativeLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="#000"
+            android:onClick="@{()->viewModel.onClickBackground()}" />
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/sneaker_bag_scene"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/circle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:alpha="0"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="200dp"
+                app:cardElevation="0dp"
+                app:layout_constraintDimensionRatio="1:1" />
+
+            <RelativeLayout
+                android:id="@+id/cardBackground"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/shp_white_top_24dp" />
+
+            <ImageView
+                android:id="@+id/image"
+                imageUrl="@{viewModel.sneaker.media.imageUrl}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.mayburger.sneakers.util.textfont.TextFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.name}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/grey_600"
+                    android:textSize="20sp"
+                    app:typeface="bold"
+                    tools:text="Air Max Exosense &quot;Atomic Powder&quot;" />
+
+                <com.mayburger.sneakers.util.textfont.TextFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.price}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:typeface="bold"
+                    tools:text="$200.00" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

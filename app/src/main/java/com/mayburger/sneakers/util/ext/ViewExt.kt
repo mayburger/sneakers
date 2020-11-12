@@ -21,8 +21,11 @@ import android.widget.TextView
 import androidx.core.animation.addListener
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.palette.graphics.Palette
 import com.mayburger.sneakers.R
+import com.mayburger.sneakers.util.ext.ViewUtils.fadeShow
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
@@ -40,6 +43,14 @@ object ViewUtils {
         return (dp * Resources.getSystem().displayMetrics.density)
     }
 
+    fun Fragment.destroy(){
+        requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+    }
+
+    fun FragmentManager.hasTag(tag:String):Boolean{
+        return this.fragments.contains(this.findFragmentByTag(tag))
+    }
+
     suspend fun Bitmap.isColorDark(): Boolean {
         return suspendCoroutine { cont ->
             Palette.generateAsync(this) {
@@ -50,7 +61,8 @@ object ViewUtils {
     }
 
     fun isColorDark(color: Int): Boolean {
-        val darkness = 1 - (0.299 * Color.red(color) + 0.587 * Color.green(color) + 0.114 * Color.blue(color)) / 255
+        val darkness =
+            1 - (0.299 * Color.red(color) + 0.587 * Color.green(color) + 0.114 * Color.blue(color)) / 255
         return if (darkness < 0.5) {
             false // It's a light color
         } else {
@@ -64,8 +76,8 @@ object ViewUtils {
         progressDialog.isIndeterminate = true
         val drawable = ProgressBar(context).indeterminateDrawable.mutate()
         drawable.setColorFilter(
-                context.resources.getColor(R.color.purple_200),
-                PorterDuff.Mode.SRC_IN
+            context.resources.getColor(R.color.purple_200),
+            PorterDuff.Mode.SRC_IN
         )
         progressDialog.setIndeterminateDrawable(drawable)
         progressDialog.setCancelable(false)
@@ -73,10 +85,10 @@ object ViewUtils {
     }
 
     fun View.flipX(
-            duration: Long? = 400,
-            onFlip: (() -> Unit)? = {},
-            onEnd: (() -> Unit)? = {},
-            after: Long? = 0
+        duration: Long? = 400,
+        onFlip: (() -> Unit)? = {},
+        onEnd: (() -> Unit)? = {},
+        after: Long? = 0
     ) {
         Handler().postDelayed({
             AnimatorSet().apply {
@@ -86,27 +98,27 @@ object ViewUtils {
                         onEnd?.invoke()
                     })
                 }).after(
-                        ObjectAnimator.ofFloat(this@flipX, View.SCALE_X, 0f).apply {
-                            this.duration = duration ?: 400
-                            addListener(onEnd = {
-                                onFlip?.invoke()
-                            })
-                        }
+                    ObjectAnimator.ofFloat(this@flipX, View.SCALE_X, 0f).apply {
+                        this.duration = duration ?: 400
+                        addListener(onEnd = {
+                            onFlip?.invoke()
+                        })
+                    }
                 )
                 start()
             }
-        },after?:0)
+        }, after ?: 0)
     }
 
     fun View.animToY(
-            y: Float,
-            animate: Boolean? = true,
-            after: Long? = 0,
-            duration: Long? = 500,
-            onEnd: (() -> Unit)? = {},
-            percent: Float? = 100f,
-            onPercent: (() -> Unit)? = {},
-            interpolator: TimeInterpolator? = null
+        y: Float,
+        animate: Boolean? = true,
+        after: Long? = 0,
+        duration: Long? = 500,
+        onEnd: (() -> Unit)? = {},
+        percent: Float? = 100f,
+        onPercent: (() -> Unit)? = {},
+        interpolator: TimeInterpolator? = null
     ) {
         AnimatorSet().apply {
             play(ObjectAnimator.ofFloat(this@animToY, View.TRANSLATION_Y, dpToPxFloat(y)).apply {
@@ -129,12 +141,12 @@ object ViewUtils {
     }
 
     fun View.animToX(
-            x: Float,
-            animate: Boolean? = true,
-            duration: Long? = 500,
-            onEnd: (() -> Unit)? = {},
-            percent: Float? = 100f,
-            onPercent: (() -> Unit)? = {}
+        x: Float,
+        animate: Boolean? = true,
+        duration: Long? = 500,
+        onEnd: (() -> Unit)? = {},
+        percent: Float? = 100f,
+        onPercent: (() -> Unit)? = {}
     ) {
         AnimatorSet().apply {
             play(ObjectAnimator.ofFloat(this@animToX, View.TRANSLATION_X, dpToPxFloat(x)).apply {
@@ -150,11 +162,16 @@ object ViewUtils {
         }
     }
 
-    fun View.animToAngle(angle:Double, radius:Float,duration: Long? = 500){
+    fun View.animToAngle(angle: Double, radius: Float, duration: Long? = 500) {
 
     }
 
-    fun View.scale(scale: Float, duration: Long? = 1000, onEnd: (() -> Unit)? = {}, after: Long? = 0) {
+    fun View.scale(
+        scale: Float,
+        duration: Long? = 1000,
+        onEnd: (() -> Unit)? = {},
+        after: Long? = 0
+    ) {
         AnimatorSet().apply {
             play(ObjectAnimator.ofFloat(this@scale, View.SCALE_X, scale).apply {
                 this.duration = duration ?: 1000
@@ -170,7 +187,12 @@ object ViewUtils {
     }
 
 
-    fun View.scaleY(scale: Float, duration: Long? = 1000, onEnd: (() -> Unit)? = {}, after: Long? = 0) {
+    fun View.scaleY(
+        scale: Float,
+        duration: Long? = 1000,
+        onEnd: (() -> Unit)? = {},
+        after: Long? = 0
+    ) {
         AnimatorSet().apply {
             play(ObjectAnimator.ofFloat(this@scaleY, View.SCALE_Y, scale).apply {
                 this.duration = duration ?: 1000
@@ -195,8 +217,8 @@ object ViewUtils {
     }
 
     fun View.width(
-            width: Int, duration: Long? = 500, onEnd: (() -> Unit)? = {}, percent: Float? = 100f,
-            onPercent: (() -> Unit)? = {}
+        width: Int, duration: Long? = 500, onEnd: (() -> Unit)? = {}, percent: Float? = 100f,
+        onPercent: (() -> Unit)? = {}
     ) {
         ValueAnimator.ofInt(this.width, dpToPx(width)).apply {
             this.duration = duration ?: 500
@@ -276,18 +298,35 @@ object ViewUtils {
         }
     }
 
+    fun View.alpha(
+        alpha: Float,
+        onEnd: (() -> Unit)? = {},
+        duration: Long? = 1000,
+        after: Long? = 0
+    ) {
+        AnimatorSet().apply {
+            play(ObjectAnimator.ofFloat(this@alpha, View.ALPHA, alpha).apply {
+                this.duration = duration ?: 1000
+                addListener(onEnd = {
+                    onEnd?.invoke()
+                })
+            }).after(after ?: 0)
+            start()
+        }
+    }
+
     fun hideKeyboard(activity: Activity) {
         val imm = activity
-                .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(
-                activity.findViewById<View>(R.id.content).windowToken,
-                0
+            activity.findViewById<View>(R.id.content).windowToken,
+            0
         )
     }
 
     fun showKeyboard(view: View) {
         val imm = view.context
-                .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(view, 0)
     }
 
@@ -318,15 +357,15 @@ fun Drawable.toBitmap(context: Context): Bitmap {
 
     bitmap = if (drawable.intrinsicWidth <= 0 || drawable.intrinsicHeight <= 0) {
         Bitmap.createBitmap(
-                1,
-                1,
-                Bitmap.Config.ARGB_8888
+            1,
+            1,
+            Bitmap.Config.ARGB_8888
         ) // Single color bitmap will be created of 1x1 pixel
     } else {
         Bitmap.createBitmap(
-                drawable.intrinsicWidth,
-                drawable.intrinsicHeight,
-                Bitmap.Config.ARGB_8888
+            drawable.intrinsicWidth,
+            drawable.intrinsicHeight,
+            Bitmap.Config.ARGB_8888
         )
     }
 
@@ -337,9 +376,9 @@ fun Drawable.toBitmap(context: Context): Bitmap {
 }
 
 fun TextView.setReadMore(
-        rootNotes: View,
-        showReadMore: ObservableBoolean,
-        maxLine: ObservableField<Int>
+    rootNotes: View,
+    showReadMore: ObservableBoolean,
+    maxLine: ObservableField<Int>
 ) {
     this.post {
         showReadMore.set(this.lineCount > 4)
@@ -361,7 +400,7 @@ fun TextView.setReadMore(
 fun Bitmap.getRoundedCornerBitmap(pixels: Int): Bitmap? {
     val bitmap = this
     val output = Bitmap.createBitmap(
-            bitmap.width, bitmap
+        bitmap.width, bitmap
             .height, Bitmap.Config.ARGB_8888
     )
     val canvas = Canvas(output)
@@ -382,16 +421,16 @@ fun Bitmap.getRoundedCornerBitmap(pixels: Int): Bitmap? {
 
 fun View.hideKeyboard() {
     val imm = this.context
-            .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(
-            (this.context as Activity).findViewById<View>(R.id.content).windowToken,
-            0
+        (this.context as Activity).findViewById<View>(R.id.content).windowToken,
+        0
     )
 }
 
 fun View.showKeyboard() {
     val imm = this.context
-            .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.showSoftInput(this, 0)
 }
 
