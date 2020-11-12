@@ -2,12 +2,16 @@ package com.mayburger.sneakers.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayoutMediator
 import com.mayburger.sneakers.R
 import com.mayburger.sneakers.BR
 import com.mayburger.sneakers.databinding.ActivityMainBinding
 import com.mayburger.sneakers.databinding.ItemBrandsBinding
+import com.mayburger.sneakers.models.Brand
 import com.mayburger.sneakers.ui.adapters.MainAdapter
 import com.mayburger.sneakers.ui.adapters.MainPagerAdapter
 import com.mayburger.sneakers.ui.base.BaseActivity
@@ -32,46 +36,56 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNav
     @Inject
     lateinit var mainAdapter: MainAdapter
 
+    val pagerChangeCallback = object : ViewPager2.OnPageChangeCallback() {
+        override fun onPageSelected(position: Int) {
+            viewModel.currentIndex.value = position
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewDataBinding.lifecycleOwner = this
-        loadBrands()
-        pager.adapter = MainPagerAdapter(this,viewModel.brandData.map {
+        pager.adapter = MainPagerAdapter(this, viewModel.brandData.map {
             MainFragment.newInstance(it)
         }.toCollection(arrayListOf()))
-        pager.isUserInputEnabled = false
+        pager.registerOnPageChangeCallback(pagerChangeCallback)
+        TabLayoutMediator(tab, pager) { tab, position ->
+            tab.customView = getTabLayout(position,viewModel.brandData[position])
+        }.attach()
     }
 
-    fun loadBrands() {
-        viewModel.brandData.mapIndexed { index, i ->
-            ItemBrandsBinding.inflate(LayoutInflater.from(this)).apply {
-                this@MainActivity.viewModel.currentIndex.observe(this@MainActivity, Observer {
-                    pager.setCurrentItem(it,true)
-                    if (it == index){
-                        this.background.scaleX(1.2f,400)
-                        this.background.scaleY(1.2f,400,onEnd = {
-                            this.background.scaleX(1f,400)
-                            this.background.scaleY(1f,400)
-                        })
-                        this.background.fadeShow(duration=400)
-                        this.image.setColorFilter(resources.getColor(R.color.white))
-                    } else{
-                        this.background.fadeHide(duration=400,onEnd = {
-                            this.background.scaleX = 0.5f
-                            this.background.scaleY = 0.5f
-                        })
-                        this.image.setColorFilter(resources.getColor(R.color.colorTextGrey))
-                    }
-                })
-                this.id = index
-                this.viewModel = this@MainActivity.viewModel
-                this.image.setImageResource(i.image)
-                this.root.setOnClickListener{
-                    viewModel?.currentIndex?.value = i.id
-                    viewModel?.currentBrandName?.value = i.name
+    override fun onDestroy() {
+        super.onDestroy()
+        pager.unregisterOnPageChangeCallback(pagerChangeCallback)
+    }
+
+    fun getTabLayout(index:Int, i: Brand): View {
+        return ItemBrandsBinding.inflate(LayoutInflater.from(this)).apply {
+            this@MainActivity.viewModel.currentIndex.observe(this@MainActivity, Observer {
+                pager.setCurrentItem(it, true)
+                if (it == index) {
+                    this.background.scaleX(1.2f, 400)
+                    this.background.scaleY(1.2f, 400, onEnd = {
+                        this.background.scaleX(1f, 400)
+                        this.background.scaleY(1f, 400)
+                    })
+                    this.background.fadeShow(duration = 400)
+                    this.image.setColorFilter(resources.getColor(R.color.white))
+                } else {
+                    this.background.fadeHide(duration = 400, onEnd = {
+                        this.background.scaleX = 0.5f
+                        this.background.scaleY = 0.5f
+                    })
+                    this.image.setColorFilter(resources.getColor(R.color.colorTextGrey))
                 }
-                brands.addView(this.root)
+            })
+            this.id = index
+            this.viewModel = this@MainActivity.viewModel
+            this.image.setImageResource(i.image)
+            this.root.setOnClickListener {
+                viewModel?.currentIndex?.value = i.id
+                viewModel?.currentBrandName?.value = i.name
             }
-        }
+        }.root
     }
 }
