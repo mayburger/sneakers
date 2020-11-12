@@ -2,6 +2,8 @@ package com.mayburger.sneakers.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.mayburger.sneakers.databinding.ItemEmptyBinding
 import com.mayburger.sneakers.databinding.ItemMainBinding
@@ -74,7 +76,7 @@ class MainAdapter : RecyclerView.Adapter<BaseViewHolder>() {
     }
 
     interface Callback {
-        fun onSelectedItem(sneaker: Sneaker)
+        fun onSelectedItem(sneaker: Sneaker,sharedCard:CardView)
     }
 
     inner class MainViewHolder(private val mBinding: ItemMainBinding) :
@@ -83,7 +85,8 @@ class MainAdapter : RecyclerView.Adapter<BaseViewHolder>() {
         override fun onBind(position: Int) {
             if (data.isNotEmpty()) {
                 val viewModel = data[position]
-                mBinding.root.setOnClickListener { mListener?.onSelectedItem(viewModel.sneaker) }
+                ViewCompat.setTransitionName(mBinding.card, data[position].title)
+                mBinding.root.setOnClickListener { mListener?.onSelectedItem(viewModel.sneaker,mBinding.card) }
                 mBinding.viewModel = viewModel
             }
         }

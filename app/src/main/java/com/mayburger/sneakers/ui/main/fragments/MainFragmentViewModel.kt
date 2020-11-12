@@ -1,5 +1,6 @@
 package com.mayburger.sneakers.ui.main.fragments
 
+import androidx.databinding.ObservableBoolean
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
@@ -22,6 +23,7 @@ class MainFragmentViewModel @ViewModelInject constructor(
     }
 
     var currentBrandName = MutableLiveData("")
+    val isLoaded = MutableLiveData(false)
 
     val sneakers = currentBrandName.switchMap {
         liveData(Dispatchers.IO) {
@@ -34,8 +36,10 @@ class MainFragmentViewModel @ViewModelInject constructor(
                     }?.map {
                         ItemMainViewModel(it ?: Sneaker())
                     })
+                    isLoaded.postValue(true)
                 }
             } catch (e: Exception) {
+                isLoaded.postValue(true)
                 e.printStackTrace()
             }
         }

@@ -24,12 +24,5 @@ class MainViewModel @ViewModelInject constructor(
 
     var currentIndex = MutableLiveData(0)
     var currentBrandName = MutableLiveData("adidas")
-    val brandData = arrayOf(
-        Brand("adidas", 0, R.drawable.ic_adidas),
-        Brand("nike", 1, R.drawable.ic_nike),
-        Brand("reebok", 2, R.drawable.ic_reebok),
-        Brand("puma", 3, R.drawable.ic_puma),
-        Brand("vans", 4, R.drawable.ic_vans),
-        Brand("jordan", 5, R.drawable.ic_jordan),
-    )
+    val brands = dataManager.getBrands()
 }

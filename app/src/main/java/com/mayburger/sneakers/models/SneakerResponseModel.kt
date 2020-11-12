@@ -1,10 +1,15 @@
 package com.mayburger.sneakers.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 data class SneakerResponseModel(
 	val count: Int? = null,
 	val results: List<Sneaker?>? = null
 )
 
+
+@Parcelize
 data class Sneaker(
 	val gender: String? = null,
 	val releaseDate: String? = null,
@@ -18,11 +23,12 @@ data class Sneaker(
 	val brand: String? = null,
 	val retailPrice: Int? = null,
 	val shoe: String? = null
-)
+): Parcelable
 
+@Parcelize
 data class Media(
 	val smallImageUrl: String? = null,
 	val imageUrl: String? = null,
 	val thumbUrl: String? = null
-)
+):Parcelable
 
