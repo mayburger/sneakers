@@ -1,12 +1,14 @@
 package com.mayburger.sneakers.data
 
 import android.content.Context
+import com.google.gson.Gson
 import com.mayburger.sneakers.R
 import com.mayburger.sneakers.data.hawk.HawkHelper
 import com.mayburger.sneakers.data.remote.ApiHelper
 import com.mayburger.sneakers.models.Brand
 import com.mayburger.sneakers.models.Sneaker
 import com.mayburger.sneakers.models.SneakerResponseModel
+import com.mayburger.sneakers.util.getJsonStringFromAssets
 import io.reactivex.Observable
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -30,7 +32,8 @@ class AppDataManager @Inject constructor(
     }
 
     override suspend fun getSneakers(limit: Int, brand: String): SneakerResponseModel {
-        return mApiHelper.getSneakers(limit, brand)
+        return Gson().fromJson<SneakerResponseModel>(getJsonStringFromAssets(mContext,"sneakers/sneakers.json"),SneakerResponseModel::class.java)
+//        return mApiHelper.getSneakers(limit,brand)
     }
 
 }

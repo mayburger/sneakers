@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.material.tabs.TabLayout
 import com.mayburger.sneakers.constants.RecyclerConstants
 import com.mayburger.sneakers.util.ext.ViewUtils
@@ -221,7 +222,14 @@ object ViewBinding {
             RecyclerConstants.GRID_3_LAYOUT_MANAGER -> {
                 GridLayoutManager(view.context, 3)
             }
+            RecyclerConstants.GRID_4_LAYOUT_MANAGER -> {
+                GridLayoutManager(view.context, 4)
+            }
+            RecyclerConstants.FLEX_LAYOUT_MANAGER -> {
+                FlexboxLayoutManager(view.context)
+            }
             else -> {
+
                 LinearLayoutManager(view.context)
             }
         }

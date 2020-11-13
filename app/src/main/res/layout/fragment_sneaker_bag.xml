@@ -8,6 +8,8 @@
         <variable
             name="viewModel"
             type="com.mayburger.sneakers.ui.sneaker.bag.SneakerBagViewModel" />
+
+        <import type="com.mayburger.sneakers.constants.RecyclerConstants" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,6 +29,7 @@
             android:id="@+id/motion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:translationY="1000dp"
             app:layoutDescription="@xml/sneaker_bag_scene"
             app:layout_constraintBottom_toBottomOf="parent">
 
@@ -50,13 +53,15 @@
 
             <ImageView
                 android:id="@+id/image"
-                android:src="@drawable/shoes"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:paddingTop="32dp"
+                android:paddingBottom="32dp"
+                android:src="@drawable/shoes" />
 
             <LinearLayout
-                android:id="@+id/detail"
-                android:layout_width="0dp"
+                android:id="@+id/content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -64,23 +69,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@{viewModel.name}"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/grey_600"
-                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/gray_500"
+                    android:textSize="24sp"
                     app:typeface="bold"
                     tools:text="Air Max Exosense &quot;Atomic Powder&quot;" />
 
                 <com.mayburger.sneakers.util.textfont.TextFont
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:text="@{viewModel.price}"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange_200"
+                    android:textSize="24sp"
                     app:typeface="bold"
                     tools:text="$200.00" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSizes"
+                    recyclerLayoutManager="@{RecyclerConstants.GRID_4_LAYOUT_MANAGER}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:minHeight="30dp" />
+
+                <com.mayburger.sneakers.util.textfont.TextFont
+                    android:id="@+id/add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@{viewModel.size == null ? @drawable/shp_gray_200_16dp : @drawable/shp_orange_16dp}"
+                    android:padding="16dp"
+                    android:text="Add to Cart"
+                    android:textAlignment="center"
+                    android:textColor="@{viewModel.size == null ? @color/gray_700 : @color/white}"
+                    android:textSize="20sp"
+                    app:typeface="bold" />
             </LinearLayout>
+
 
         </androidx.constraintlayout.motion.widget.MotionLayout>
 

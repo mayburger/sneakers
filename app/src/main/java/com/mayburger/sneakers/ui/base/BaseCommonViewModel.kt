@@ -1,5 +1,8 @@
 package com.mayburger.sneakers.ui.base
 
-interface BaseCommonViewModel {
-    fun layoutId(): Int
+import androidx.lifecycle.MutableLiveData
+
+abstract class BaseCommonViewModel {
+    val selected:MutableLiveData<Boolean> = MutableLiveData(false)
+    abstract fun layoutId(): Int
 }

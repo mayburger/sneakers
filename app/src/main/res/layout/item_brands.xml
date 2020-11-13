@@ -24,7 +24,7 @@
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:alpha="0"
-            android:background="@drawable/shp_orange_14dp"
+            android:background="@drawable/shp_orange_16dp"
             android:scaleX="0.5"
             android:scaleY="0.5"
             app:layout_constraintLeft_toLeftOf="parent"

@@ -27,6 +27,8 @@ class SneakerBagViewModel @ViewModelInject constructor(
     val price: MutableLiveData<String> = MutableLiveData()
     val name: MutableLiveData<String> = MutableLiveData()
 
+    val size:MutableLiveData<String> = MutableLiveData()
+
     fun onClickBackground() {
         navigator?.onTriggerBack()
     }

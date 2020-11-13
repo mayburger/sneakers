@@ -1,0 +1,275 @@
+{
+  "count": 6268,
+  "results": [
+    {
+      "id": "df9f2551-1f52-419b-b441-0f687e4a1f72",
+      "brand": "adidas",
+      "colorway": "Core Black / Signal Coral / Bluebird",
+      "gender": "men",
+      "name": "Bluebird",
+      "releaseDate": "",
+      "retailPrice": 130,
+      "shoe": "adidas NMD_R1",
+      "styleId": "FV8524",
+      "title": "adidas NMD_R1 Bluebird",
+      "year": 0,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/adidas-NMD-R1-Bluebird.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985",
+        "smallImageUrl": "https://stockx.imgix.net/adidas-NMD-R1-Bluebird.jpg?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985",
+        "thumbUrl": "https://stockx.imgix.net/adidas-NMD-R1-Bluebird.jpg?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985"
+      }
+    },
+    {
+      "id": "a3bc8304-cdbc-41e2-9d57-d214bad1381f",
+      "brand": "adidas",
+      "colorway": "Maroon/Maroon/Collegiate Burgundy",
+      "gender": "men",
+      "name": "Maroon",
+      "releaseDate": "",
+      "retailPrice": 130,
+      "shoe": "adidas NMD_R1",
+      "styleId": "EG2937",
+      "title": "adidas NMD_R1 Maroon",
+      "year": 0,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/adidas-NMD-R1-Maroon.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985",
+        "smallImageUrl": "https://stockx.imgix.net/adidas-NMD-R1-Maroon.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985",
+        "thumbUrl": "https://stockx.imgix.net/adidas-NMD-R1-Maroon.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985"
+      }
+    },
+    {
+      "id": "f5bab9db-be85-4223-a53b-3ed3f50d56fe",
+      "brand": "adidas",
+      "colorway": "Black / Core Black / Carbon",
+      "gender": "men",
+      "name": "Black",
+      "releaseDate": "",
+      "retailPrice": 130,
+      "shoe": "adidas NMD_R1",
+      "styleId": "FV8152",
+      "title": "adidas NMD_R1 Black",
+      "year": 0,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/adidas-NMD-R1-Black.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985",
+        "smallImageUrl": "https://stockx.imgix.net/adidas-NMD-R1-Black.jpg?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985",
+        "thumbUrl": "https://stockx.imgix.net/adidas-NMD-R1-Black.jpg?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1603481985"
+      }
+    },
+    {
+      "id": "c3c64894-c95f-41dc-867c-7a88ed868196",
+      "brand": "adidas",
+      "colorway": "Espresso/Mushroom Brown/White Vapour",
+      "gender": "men",
+      "name": "Espresso",
+      "releaseDate": "2011-01-01 23:59:59",
+      "retailPrice": null,
+      "shoe": "adidas Munchen",
+      "styleId": "V22771",
+      "title": "adidas Munchen Espresso",
+      "year": 2011,
+      "media": {
+        "imageUrl": null,
+        "smallImageUrl": null,
+        "thumbUrl": null
+      }
+    },
+    {
+      "id": "19fe0e28-0de3-4bb1-a7c5-fe77d0102a72",
+      "brand": "adidas",
+      "colorway": "White/Poppy/Satellite Blue",
+      "gender": "men",
+      "name": "Colette",
+      "releaseDate": "2009-12-18 23:59:59",
+      "retailPrice": 145,
+      "shoe": "adidas Paris",
+      "styleId": "G12633",
+      "title": "adidas Paris Colette",
+      "year": 2009,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/adidas-Paris-Colette.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1573198036",
+        "smallImageUrl": "https://stockx.imgix.net/adidas-Paris-Colette.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1573198036",
+        "thumbUrl": "https://stockx.imgix.net/adidas-Paris-Colette.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1573198036"
+      }
+    },
+    {
+      "id": "6bb8997d-371e-45d3-806f-aaef2e6aaf53",
+      "brand": "adidas",
+      "colorway": "Medium Lead/Satellite/Gum 4",
+      "gender": "men",
+      "name": "Sneakersnstuff",
+      "releaseDate": "2009-01-01 23:59:59",
+      "retailPrice": 119,
+      "shoe": "adidas Stockholm",
+      "styleId": "G19850",
+      "title": "adidas Stockholm Sneakersnstuff",
+      "year": 2009,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/Adidas-Stockholm-Sneakersnstuff.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "smallImageUrl": "https://stockx.imgix.net/Adidas-Stockholm-Sneakersnstuff.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "thumbUrl": "https://stockx.imgix.net/Adidas-Stockholm-Sneakersnstuff.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256"
+      }
+    },
+    {
+      "id": "f48c0ad3-8738-4505-b629-60a1eef18181",
+      "brand": "adidas",
+      "colorway": "Purple/Gold/Purple",
+      "gender": "men",
+      "name": "Sneakersnstuff",
+      "releaseDate": "2009-01-01 23:59:59",
+      "retailPrice": null,
+      "shoe": "adidas Samba",
+      "styleId": null,
+      "title": "adidas Samba Sneakersnstuff",
+      "year": 2009,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/Adidas-Samba-Sneakersnstuff.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "smallImageUrl": "https://stockx.imgix.net/Adidas-Samba-Sneakersnstuff.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "thumbUrl": "https://stockx.imgix.net/Adidas-Samba-Sneakersnstuff.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256"
+      }
+    },
+    {
+      "id": "99b8b916-1b44-4ad7-815c-9c2236e52dd5",
+      "brand": "adidas",
+      "colorway": "Black/White",
+      "gender": "men",
+      "name": "Mastermind",
+      "releaseDate": "2010-06-10 23:59:59",
+      "retailPrice": null,
+      "shoe": "adidas Hardland",
+      "styleId": "U42984",
+      "title": "adidas Hardland Mastermind",
+      "year": 2010,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/Adidas-Hardland-Mastermind.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "smallImageUrl": "https://stockx.imgix.net/Adidas-Hardland-Mastermind.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "thumbUrl": "https://stockx.imgix.net/Adidas-Hardland-Mastermind.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256"
+      }
+    },
+    {
+      "id": "7d40d530-d0b4-4c65-8236-6d4ed03b0585",
+      "brand": "adidas",
+      "colorway": null,
+      "gender": "men",
+      "name": "Black",
+      "releaseDate": "2017-09-29 23:59:59",
+      "retailPrice": 120,
+      "shoe": "adidas O'Reardon",
+      "styleId": "AQ0353",
+      "title": "adidas O'Reardon Black",
+      "year": 2017,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Black.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "smallImageUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Black.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "thumbUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Black.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256"
+      }
+    },
+    {
+      "id": "7f563008-2672-4b03-b26c-94b53db1c7cd",
+      "brand": "adidas",
+      "colorway": null,
+      "gender": "men",
+      "name": "Green",
+      "releaseDate": "2017-09-29 23:59:59",
+      "retailPrice": 120,
+      "shoe": "adidas O'Reardon",
+      "styleId": null,
+      "title": "adidas O'Reardon Green",
+      "year": 2017,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Green.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "smallImageUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Green.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "thumbUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Green.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256"
+      }
+    },
+    {
+      "id": "bf90d4c2-149e-4cb3-94c1-3c8795a72487",
+      "brand": "adidas",
+      "colorway": "Collegiate Navy/Running White/Core Red",
+      "gender": "men",
+      "name": "Bonethrower",
+      "releaseDate": "2017-08-05 23:59:59",
+      "retailPrice": 80,
+      "shoe": "adidas Matchcourt",
+      "styleId": "CG4870",
+      "title": "adidas Matchcourt Bonethrower",
+      "year": 2017,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/Adidas-Matchcourt-Bonethrower.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "smallImageUrl": "https://stockx.imgix.net/Adidas-Matchcourt-Bonethrower.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "thumbUrl": "https://stockx.imgix.net/Adidas-Matchcourt-Bonethrower.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256"
+      }
+    },
+    {
+      "id": "a99544ff-074a-482a-abec-8ef9dcd7fb90",
+      "brand": "adidas",
+      "colorway": null,
+      "gender": "men",
+      "name": "Navy",
+      "releaseDate": "2017-09-29 23:59:59",
+      "retailPrice": 120,
+      "shoe": "adidas O'Reardon",
+      "styleId": null,
+      "title": "adidas O'Reardon Navy",
+      "year": 2017,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Navy.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "smallImageUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Navy.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "thumbUrl": "https://stockx.imgix.net/Adidas-OReardon-Palace-Navy.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256"
+      }
+    },
+    {
+      "id": "54f9a262-d02e-4fe3-8d9a-c08b3967f4f2",
+      "brand": "adidas",
+      "colorway": "Scarlet/Footwear White/Core Black",
+      "gender": "men",
+      "name": "Scarlet",
+      "releaseDate": "2015-01-01 23:59:59",
+      "retailPrice": 65,
+      "shoe": "adidas Seeley",
+      "styleId": "AQ8529",
+      "title": "adidas Seeley Scarlet",
+      "year": 2015,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/adidas-Seeley-Scarlet.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1539738421",
+        "smallImageUrl": "https://stockx.imgix.net/adidas-Seeley-Scarlet.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1539738421",
+        "thumbUrl": "https://stockx.imgix.net/adidas-Seeley-Scarlet.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1539738421"
+      }
+    },
+    {
+      "id": "1bf2d66d-bef6-4395-8ac0-aec8bb39677a",
+      "brand": "adidas",
+      "colorway": "White/White/Black",
+      "gender": "men",
+      "name": "Berlin",
+      "releaseDate": "2006-01-01 23:59:59",
+      "retailPrice": null,
+      "shoe": "adidas Gazelle",
+      "styleId": "14074",
+      "title": "adidas Gazelle Berlin",
+      "year": 2006,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/adidas-Gazelle-Berlin.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1583327219",
+        "smallImageUrl": "https://stockx.imgix.net/adidas-Gazelle-Berlin.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1583327219",
+        "thumbUrl": "https://stockx.imgix.net/adidas-Gazelle-Berlin.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1583327219"
+      }
+    },
+    {
+      "id": "0a65f7a4-5af4-4e75-83e7-9395c620aaf9",
+      "brand": "adidas",
+      "colorway": "Core Black/Silver Metallic/Granite",
+      "gender": "men",
+      "name": "Blackout",
+      "releaseDate": "2016-09-10 23:59:59",
+      "retailPrice": 100,
+      "shoe": "adidas AlphaBounce",
+      "styleId": "B42746",
+      "title": "adidas AlphaBounce Blackout",
+      "year": 2016,
+      "media": {
+        "imageUrl": "https://stockx.imgix.net/Adidas-Alpha-Bounce-Blackout.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "smallImageUrl": "https://stockx.imgix.net/Adidas-Alpha-Bounce-Blackout.png?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256",
+        "thumbUrl": "https://stockx.imgix.net/Adidas-Alpha-Bounce-Blackout.png?fit=fill&bg=FFFFFF&w=140&h=100&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1538080256"
+      }
+    }
+  ]
+}

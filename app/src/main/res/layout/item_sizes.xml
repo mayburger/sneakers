@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mayburger.sneakers.ui.adapters.viewmodels.ItemSizesViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:padding="4dp">
+
+        <com.mayburger.sneakers.util.textfont.TextFont
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@{viewModel.selected ? @drawable/shp_orange_16dp : @drawable/shp_gray_200_16dp}"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@{viewModel.size}"
+            android:textColor="@{viewModel.selected ? @color/white : @color/gray_700}"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:typeface="bold"
+            tools:background="@drawable/shp_orange_16dp"
+            tools:textColor="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
