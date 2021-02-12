@@ -71,12 +71,16 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNav
                         this.background.scaleY(1f, 400)
                     })
                     this.background.fadeShow(duration = 400)
+                    this.background.elevation = 4f
+                    this.image.elevation = 5f
                     this.image.setColorFilter(resources.getColor(R.color.white))
                 } else {
                     this.background.fadeHide(duration = 400, onEnd = {
                         this.background.scaleX = 0.5f
                         this.background.scaleY = 0.5f
                     })
+                    this.background.elevation = 0f
+                    this.image.elevation = 0f
                     this.image.setColorFilter(resources.getColor(R.color.colorTextGrey))
                 }
             })

@@ -61,11 +61,12 @@ class SneakerBagFragment : BaseFragment<FragmentSneakerBagBinding, SneakerBagVie
         viewModel.brand.value = arguments?.getParcelable(EXTRA_BRAND)
         viewModel.price.value = "$${viewModel.sneaker.value?.retailPrice?.toDouble()}"
 
-        content.setOnClickListener {
-            viewModel.size.value?.let{
-                motion.setTransition(R.id.startTransition)
-                motion.transitionToEnd()
-            }
+        add.setOnClickListener {
+            motion.setTransition(R.id.startTransition)
+            motion.transitionToEnd()
+//            viewModel.size.value?.let{
+//
+//            }
         }
 
         buildSizes()
@@ -78,17 +79,21 @@ class SneakerBagFragment : BaseFragment<FragmentSneakerBagBinding, SneakerBagVie
         background.alpha(0.6f, duration = 600)
         // On Order Animation
         motion.addTransitionListener(onEnd = {p0,p1->
-            circle.animToY(-200f, duration = 600)
-            image.animToY(-200f, duration = 600)
-            circle.scale(0.8f, duration = 600)
-            image.scale(0.6f, duration = 600, onEnd = {
-                circle.animToY(400f, duration = 600)
-                image.animToY(400f, duration = 600)
-                circle.scale(0.2f, duration = 600)
-                image.scale(0f, duration = 600,onEnd = {
-                    onTriggerBack()
+            if(p1 == R.id.end){
+                circle.animToY(-200f, duration = 600)
+                image.animToY(-200f, duration = 600)
+                circle.scale(0.8f, duration = 600)
+                image.scale(0.6f, duration = 600, onEnd = {
+                    circle.animToY(400f, duration = 600)
+                    image.animToY(400f, duration = 600)
+                    circle.scale(0.2f, duration = 600)
+                    image.scale(0f, duration = 600,onEnd = {
+                        onTriggerBack()
+                    })
                 })
-            })
+            } else if(p1 == R.id.swipeEnd){
+                onTriggerBack()
+            }
         })
     }
 

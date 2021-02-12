@@ -66,6 +66,9 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>> : AppComp
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val vaClass = Class.forName("android.animation.ValueAnimator")
+        val method = vaClass.getMethod("setDurationScale",Float::class.java)
+        method.invoke(null, 0.5f)
         pDialog = ViewUtils.getProgressDialog(this, "Please Wait")
         performDataBinding()
         Stetho.initializeWithDefaults(this)

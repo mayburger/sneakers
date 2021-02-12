@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:motion="http://schemas.android.com/apk/res-auto">
+             xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/swipeTransition"
+        motion:constraintSetEnd="@+id/swipeEnd"
+        motion:constraintSetStart="@id/start"
+        motion:duration="300">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@id/content"
+            motion:touchAnchorSide="top"
+            motion:onTouchUp="autoComplete"
+            motion:touchRegionId="@id/content"/>
+    </Transition>
 
     <Transition
         android:id="@+id/startTransition"
@@ -14,32 +28,16 @@
         <Constraint
             android:id="@+id/image"
             android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            motion:layout_constraintBottom_toTopOf="@id/content"
-            motion:layout_constraintLeft_toLeftOf="parent"
-            motion:layout_constraintRight_toRightOf="parent" />
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintTop_toTopOf="@id/content"/>
 
         <Constraint
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
             android:padding="16dp"
-            motion:layout_constraintBottom_toBottomOf="parent" />
-
-        <Constraint
-            android:id="@+id/cardBackground"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintLeft_toLeftOf="parent"
-            motion:layout_constraintRight_toRightOf="parent"
-            motion:layout_constraintTop_toTopOf="@id/image" />
+            motion:layout_constraintBottom_toBottomOf="parent"/>
 
         <Constraint
             android:id="@+id/circle"
@@ -49,7 +47,35 @@
             android:scaleX="1.5"
             android:scaleY="1.5"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintDimensionRatio="1:1" />
+            motion:layout_constraintDimensionRatio="1:1"/>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/swipeEnd">
+        <Constraint
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintTop_toTopOf="@id/content"/>
+
+        <Constraint
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            motion:layout_constraintTop_toBottomOf="parent"
+        />
+
+        <Constraint
+            android:id="@+id/circle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="1:1"/>
 
     </ConstraintSet>
 
@@ -62,7 +88,7 @@
             android:layout_marginBottom="200dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintLeft_toLeftOf="parent"
-            motion:layout_constraintRight_toRightOf="parent" />
+            motion:layout_constraintRight_toRightOf="parent"/>
 
         <Constraint
             android:id="@+id/content"
@@ -72,15 +98,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:padding="16dp"
-            motion:layout_constraintTop_toBottomOf="parent" />
-
-        <Constraint
-            android:id="@+id/cardBackground"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            motion:layout_constraintLeft_toLeftOf="parent"
-            motion:layout_constraintRight_toRightOf="parent"
-            motion:layout_constraintTop_toBottomOf="parent" />
+            motion:layout_constraintTop_toBottomOf="parent"/>
 
         <Constraint
             android:id="@+id/circle"
@@ -92,7 +110,7 @@
             motion:layout_constraintBottom_toBottomOf="@id/image"
             motion:layout_constraintLeft_toLeftOf="@id/image"
             motion:layout_constraintRight_toRightOf="@id/image"
-            motion:layout_constraintTop_toTopOf="@id/image" />
+            motion:layout_constraintTop_toTopOf="@id/image"/>
 
     </ConstraintSet>
 </MotionScene>
