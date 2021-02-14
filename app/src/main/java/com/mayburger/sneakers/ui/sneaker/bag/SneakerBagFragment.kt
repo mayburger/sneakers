@@ -10,7 +10,7 @@ import com.mayburger.sneakers.databinding.FragmentSneakerBagBinding
 import com.mayburger.sneakers.models.Brand
 import com.mayburger.sneakers.models.Sneaker
 import com.mayburger.sneakers.ui.adapters.CommonRecyclerAdapter
-import com.mayburger.sneakers.ui.adapters.viewmodels.ItemSizesViewModel
+import com.mayburger.sneakers.ui.viewmodels.ItemSizesViewModel
 import com.mayburger.sneakers.ui.base.BaseFragment
 import com.mayburger.sneakers.util.ext.ViewUtils.alpha
 import com.mayburger.sneakers.util.ext.ViewUtils.animToY

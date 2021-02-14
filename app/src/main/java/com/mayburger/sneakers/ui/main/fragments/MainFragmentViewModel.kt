@@ -1,15 +1,13 @@
 package com.mayburger.sneakers.ui.main.fragments
 
-import androidx.databinding.ObservableBoolean
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.switchMap
 import com.mayburger.sneakers.data.DataManager
 import com.mayburger.sneakers.models.Sneaker
-import com.mayburger.sneakers.ui.adapters.viewmodels.ItemMainViewModel
+import com.mayburger.sneakers.ui.viewmodels.ItemMainViewModel
 import com.mayburger.sneakers.ui.base.BaseViewModel
-import com.mayburger.sneakers.ui.main.MainNavigator
 import com.mayburger.sneakers.util.rx.SchedulerProvider
 import kotlinx.coroutines.Dispatchers
 import java.lang.Exception

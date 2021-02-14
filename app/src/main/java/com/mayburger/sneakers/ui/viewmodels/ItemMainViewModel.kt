@@ -1,4 +1,4 @@
-package com.mayburger.sneakers.ui.adapters.viewmodels
+package com.mayburger.sneakers.ui.viewmodels
 
 import com.mayburger.sneakers.models.Sneaker
 

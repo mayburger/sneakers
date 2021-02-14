@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.mayburger.sneakers.ui.adapters.viewmodels.ItemSizesViewModel" />
+            type="com.mayburger.sneakers.ui.viewmodels.ItemSizesViewModel" />
 
     </data>
 

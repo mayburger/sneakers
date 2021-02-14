@@ -1,4 +1,4 @@
-package com.mayburger.sneakers.ui.adapters
+package com.mayburger.sneakers.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mayburger.sneakers.databinding.ItemEmptyBinding
 import com.mayburger.sneakers.databinding.ItemMainBinding
 import com.mayburger.sneakers.models.Sneaker
-import com.mayburger.sneakers.ui.adapters.viewmodels.ItemMainViewModel
+import com.mayburger.sneakers.ui.viewmodels.ItemMainViewModel
 import com.mayburger.sneakers.ui.base.BaseViewHolder
 
 

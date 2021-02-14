@@ -1,9 +1,6 @@
 package com.mayburger.sneakers.di
 
-import android.app.Activity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.mayburger.sneakers.ui.adapters.MainAdapter
-import com.mayburger.sneakers.ui.adapters.MainPagerAdapter
+import com.mayburger.sneakers.ui.main.MainAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,12 +1,10 @@
 package com.mayburger.sneakers.util.binding
 
-import android.view.animation.AnimationUtils
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
-import com.mayburger.sneakers.R
-import com.mayburger.sneakers.ui.adapters.MainAdapter
-import com.mayburger.sneakers.ui.adapters.viewmodels.ItemMainViewModel
+import com.mayburger.sneakers.ui.main.MainAdapter
+import com.mayburger.sneakers.ui.viewmodels.ItemMainViewModel
 
 object AdapterBinding {
 

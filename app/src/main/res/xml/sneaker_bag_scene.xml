@@ -20,7 +20,8 @@
         android:id="@+id/startTransition"
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="300">
+        motion:motionInterpolator="easeInOut"
+        motion:duration="400">
         <KeyFrameSet></KeyFrameSet>
     </Transition>
 

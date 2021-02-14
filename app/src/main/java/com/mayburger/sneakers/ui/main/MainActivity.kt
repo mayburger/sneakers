@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.viewModels
-import androidx.cardview.widget.CardView
 import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
@@ -13,19 +12,15 @@ import com.mayburger.sneakers.BR
 import com.mayburger.sneakers.databinding.ActivityMainBinding
 import com.mayburger.sneakers.databinding.ItemBrandsBinding
 import com.mayburger.sneakers.models.Brand
-import com.mayburger.sneakers.models.Sneaker
-import com.mayburger.sneakers.ui.adapters.MainAdapter
-import com.mayburger.sneakers.ui.adapters.MainPagerAdapter
+import com.mayburger.sneakers.ui.adapters.TabPagerAdapter
 import com.mayburger.sneakers.ui.base.BaseActivity
 import com.mayburger.sneakers.ui.main.fragments.MainFragment
-import com.mayburger.sneakers.ui.sneaker.SneakerActivity
 import com.mayburger.sneakers.util.ext.ViewUtils.fadeHide
 import com.mayburger.sneakers.util.ext.ViewUtils.fadeShow
 import com.mayburger.sneakers.util.ext.ViewUtils.scaleX
 import com.mayburger.sneakers.util.ext.ViewUtils.scaleY
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNavigator{
@@ -46,7 +41,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNav
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewDataBinding.lifecycleOwner = this
-        pager.adapter = MainPagerAdapter(this, viewModel.brands.map {
+        pager.adapter = TabPagerAdapter(this, viewModel.brands.map {
             MainFragment.newInstance(it)
         }.toCollection(arrayListOf()))
         pager.registerOnPageChangeCallback(pagerChangeCallback)

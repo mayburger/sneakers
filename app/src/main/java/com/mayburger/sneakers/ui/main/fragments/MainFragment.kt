@@ -3,7 +3,6 @@ package com.mayburger.sneakers.ui.main.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.cardview.widget.CardView
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.mayburger.sneakers.BR
@@ -11,7 +10,7 @@ import com.mayburger.sneakers.R
 import com.mayburger.sneakers.databinding.FragmentMainBinding
 import com.mayburger.sneakers.models.Brand
 import com.mayburger.sneakers.models.Sneaker
-import com.mayburger.sneakers.ui.adapters.MainAdapter
+import com.mayburger.sneakers.ui.main.MainAdapter
 import com.mayburger.sneakers.ui.base.BaseFragment
 import com.mayburger.sneakers.ui.sneaker.SneakerActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>(), MainFragmentNavigator,MainAdapter.Callback{
+class MainFragment : BaseFragment<FragmentMainBinding, MainFragmentViewModel>(), MainFragmentNavigator, MainAdapter.Callback{
 
     override val bindingVariable: Int
         get() = BR.viewModel
